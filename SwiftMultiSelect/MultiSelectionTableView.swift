@@ -179,6 +179,10 @@ extension MultiSelecetionViewController: UITableViewDelegate, UITableViewDataSou
             // Set accessory type
             cell.accessoryType = UITableViewCell.AccessoryType.checkmark
 
+            if !Config.allowSelectMultipleItems {
+                selectedItems.removeAll()
+                tableView.reloadData()
+            }
             // Add current item to selected
             selectedItems.append(item)
 

@@ -119,7 +119,7 @@ extension MultiSelecetionViewController: UICollectionViewDelegate, UICollectionV
         let item = selectedItems.first { itm -> Bool in
             itm.id == itemId
         }
-
+        // For remove from collection view and create IndexPath, i need the index posistion in the array
         let collectionViewIndex = selectedItems.firstIndex { itm -> Bool in
             itm.id == itemId
         }
@@ -131,8 +131,6 @@ extension MultiSelecetionViewController: UICollectionViewDelegate, UICollectionV
 
         // Remove
         if remove {
-            // For remove from collection view and create IndexPath, i need the index posistion in the array
-
             // Filter array removing the item
             selectedItems = selectedItems.filter { itm -> Bool in
                 itm.id != itemId

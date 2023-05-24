@@ -88,6 +88,8 @@ public class SwiftMultiSelect {
 /// Public struct for configuration and customizations
 public struct Config {
     /// Background of main view
+    public static var allowSelectMultipleItems: Bool = true
+    /// Background of main view
     public static var mainBackground: UIColor = UIColor.white
     /// View's title
     public static var viewTitle: String = "Swift Multiple Select"
