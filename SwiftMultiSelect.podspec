@@ -2,13 +2,13 @@ Pod::Spec.new do |s|
 
 # 1
 s.platform = :ios
-s.ios.deployment_target = '9.0'
+s.ios.deployment_target = '12.0'
 s.name = "SwiftMultiSelect"
 s.summary = "SwiftMultiSelect lets a user select multiple contacts from PhoneBook or from custom list"
 s.requires_arc = true
 
 # 2
-s.version = "0.2.4"
+s.version = "0.2.5"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }

@@ -64,7 +64,6 @@ public class ContactsLibrary{
                 let contactFetchRequest = CNContactFetchRequest(keysToFetch: self.allowedContactKeys())
                 
                 do {
-                    var row = 0
                     try self.contactStore.enumerateContacts(with: contactFetchRequest, usingBlock: { (contact, stop) -> Void in
                         
                         var username    = "\(contact.givenName) \(contact.familyName)"
@@ -75,11 +74,8 @@ public class ContactsLibrary{
                             companyName     = ""
                         }
                         
-                        let item_contact = SwiftMultiSelectItem(row: row, title: username, description: companyName, image: nil, imageURL: nil, color: nil, userInfo: contact)
-                        contactsArray.append(item_contact)
-                        
-                        row += 1
-                        
+                        let item_contact = SwiftMultiSelectItem(id: contact.identifier, title: username, description: companyName, image: nil, imageURL: nil, color: nil, userInfo: contact)
+                        contactsArray.append(item_contact)                        
                     })
                     completionHandler(true, contactsArray)
                 }
